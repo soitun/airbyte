@@ -2,17 +2,17 @@
 # Copyright (c) 2023 Airbyte, Inc., all rights reserved.
 #
 
-from abc import ABC, abstractmethod
-from deepdiff import DeepDiff
-from enum import Enum
 import datetime
+from abc import ABC, abstractmethod
+from enum import Enum
+
 import jsonschema
-
-from hypothesis import HealthCheck, Verbosity, given, settings, strategies as st
-from hypothesis_jsonschema import from_schema
-
 from airbyte_cdk.models import ConnectorSpecification
 from connector_acceptance_test.utils import SecretDict
+from deepdiff import DeepDiff
+from hypothesis import HealthCheck, Verbosity, given, settings
+from hypothesis import strategies as st
+from hypothesis_jsonschema import from_schema
 
 
 class BackwardIncompatibilityContext(Enum):
